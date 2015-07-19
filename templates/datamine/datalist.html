@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<table border="1">
+    <thead>
+        <tr>
+            {% for field in fields %}
+                <th>{{ field.name }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for instance in datalist %}
+            <tr>
+            {% for field, value in instance.fields.items %}
+                <td>{{ value }}</td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
